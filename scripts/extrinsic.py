@@ -93,7 +93,7 @@ class CalibrationInterface(object):
             self.subtext = 'PLEASE ENTER A NUMBER. ' + message if self.entry_error else message
             if key == chr(8):
                 self.entry = self.entry[:-1]
-            elif key == chr(10):
+            elif key in ['\r', chr(10)]:
                 try:
                     opoint.append(float(self.entry))
                     self.entry_error = False
